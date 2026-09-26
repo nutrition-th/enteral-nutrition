@@ -1,0 +1,32 @@
+{
+    "formulas": [
+        {
+            "id": "formula-001",
+            "name": "สูตรตัวอย่าง 1.0 kcal/ml",
+            "energy_kcal_ml": 1.0,
+            "protein_g_100ml": 4.0,
+            "carbohydrate_g_100ml": 14.0,
+            "fat_g_100ml": 3.5,
+            "fiber_g_100ml": 1.0,
+            "sodium_mg_100ml": 100,
+            "potassium_mg_100ml": 120,
+            "calcium_mg_100ml": 80,
+            "phosphorus_mg_100ml": 60,
+            "free_water_ml_100ml": 85
+        },
+        {
+            "id": "formula-002",
+            "name": "สูตรตัวอย่าง 1.5 kcal/ml",
+            "energy_kcal_ml": 1.5,
+            "protein_g_100ml": 6.0,
+            "carbohydrate_g_100ml": 18.0,
+            "fat_g_100ml": 6.0,
+            "fiber_g_100ml": 1.5,
+            "sodium_mg_100ml": 120,
+            "potassium_mg_100ml": 150,
+            "calcium_mg_100ml": 100,
+            "phosphorus_mg_100ml": 70,
+            "free_water_ml_100ml": 80
+        }
+    ]
+}

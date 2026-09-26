@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>สูตรอาหารปั่นผสมทั่วไป</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        /* =========================
+           BODY
+        ========================= */
+
+        body {
+            margin: 0;
+
+            font-family:
+                "Segoe UI",
+                Tahoma,
+                Arial,
+                sans-serif;
+
+            color: #30483a;
+
+            background-color: #f7fbf8;
+
+            background-image:
+                url("../images/enteral-watermark.png");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-attachment: fixed;
+
+            background-repeat: no-repeat;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+            padding: 30px 25px 35px;
+        }
+
+
+        .back {
+            display: inline-block;
+
+            margin-bottom: 25px;
+
+            color: #5f806b;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 500;
+
+            transition: color 0.2s ease;
+        }
+
+
+        .back:hover {
+            color: #2f6f4e;
+        }
+
+
+        .header h1 {
+            margin: 0;
+
+            font-size: 36px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.5px;
+
+            color: #2f6f4e;
+        }
+
+
+        .header p {
+            margin: 10px 0 0;
+
+            color: #7d8982;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .container {
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+            padding: 5px 25px 50px;
+        }
+
+
+        /* =========================
+           SECTION TITLE
+        ========================= */
+
+        .section-title {
+            background:
+                rgba(255, 255, 255, 0.95);
+
+            padding: 22px 25px;
+
+            border-radius: 18px;
+
+            border:
+                1px solid #dcebe2;
+
+            margin-bottom: 25px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(48, 85, 62, 0.08);
+
+            backdrop-filter: blur(4px);
+        }
+
+
+        .section-title h2 {
+            margin: 0;
+
+            font-size: 23px;
+
+            font-weight: 600;
+
+            color: #2f6f4e;
+        }
+
+
+        /* =========================
+           PDF CARD
+        ========================= */
+
+        .pdf-card {
+            background:
+                rgba(255, 255, 255, 0.95);
+
+            padding: 25px;
+
+            border-radius: 20px;
+
+            border:
+                1px solid #dcebe2;
+
+            box-shadow:
+                0 10px 30px
+                rgba(48, 85, 62, 0.09);
+
+            margin-bottom: 30px;
+
+            backdrop-filter: blur(4px);
+        }
+
+
+        .pdf-card h3 {
+            margin: 0 0 17px;
+
+            font-size: 21px;
+
+            font-weight: 600;
+
+            color: #3f5f4b;
+        }
+
+
+        /* =========================
+           DOWNLOAD BUTTON
+        ========================= */
+
+        .download {
+            display: inline-block;
+
+            padding: 11px 20px;
+
+            margin-bottom: 20px;
+
+            background:
+                #2f8f83;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 10px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+
+        .download:hover {
+            background:
+                #26786e;
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 5px 12px
+                rgba(47, 143, 131, 0.20);
+        }
+
+
+        /* =========================
+           PDF VIEWER
+        ========================= */
+
+        iframe {
+            display: block;
+
+            width: 100%;
+
+            height: 650px;
+
+            border:
+                1px solid #dce6e2;
+
+            border-radius: 12px;
+
+            background:
+                #f5f8f7;
+
+            box-shadow:
+                inset 0 0 10px
+                rgba(48, 85, 62, 0.04);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+            max-width: 1100px;
+
+            margin: 10px auto 0;
+
+            padding: 25px 20px;
+
+            border-top:
+                1px solid
+                rgba(226, 235, 229, 0.8);
+
+            text-align: center;
+
+            color: #9aa59f;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .header {
+                padding:
+                    25px 15px 30px;
+            }
+
+
+            .container {
+                padding:
+                    5px 15px 40px;
+            }
+
+
+            .header h1 {
+                font-size: 29px;
+            }
+
+
+            .header p {
+                font-size: 14px;
+            }
+
+
+            .section-title {
+                padding: 20px;
+            }
+
+
+            .section-title h2 {
+                font-size: 20px;
+            }
+
+
+            .pdf-card {
+                padding: 20px;
+
+                border-radius: 18px;
+            }
+
+
+            .pdf-card h3 {
+                font-size: 19px;
+            }
+
+
+            .download {
+                width: 100%;
+
+                text-align: center;
+            }
+
+
+            iframe {
+                height: 500px;
+
+                border-radius: 10px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header class="header">
+
+
+        <a
+            class="back"
+            href="blenderized-diet.html"
+        >
+            ← กลับหน้าสูตรอาหารปั่นผสม
+        </a>
+
+
+        <h1>
+            สูตรอาหารปั่นผสมทั่วไป
+        </h1>
+
+
+        <p>
+            รวมเอกสารสูตรอาหารปั่นผสม ความเข้มข้น 1.0 และ 1.2 kcal/ml
+        </p>
+
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================= -->
+
+    <main class="container">
+
+
+        <!-- =========================
+             ความเข้มข้น 1.0
+        ========================= -->
+
+        <div class="section-title">
+
+            <h2>
+                ความเข้มข้น 1.0 kcal/ml
+            </h2>
+
+        </div>
+
+
+
+        <!-- 200 kcal -->
+
+        <div class="pdf-card">
+
+            <h3>
+                พลังงาน 200 kcal
+            </h3>
+
+
+            <a
+                class="download"
+                href="../pdf/general-1.0-200.pdf"
+                download
+            >
+                ดาวน์โหลด PDF
+            </a>
+
+
+            <iframe
+                src="../pdf/general-1.0-200.pdf"
+                title="สูตรทั่วไป 1.0 kcal/ml 200 kcal"
+            >
+            </iframe>
+
+        </div>
+
+
+
+        <!-- 250 kcal -->
+
+        <div class="pdf-card">
+
+            <h3>
+                พลังงาน 250 kcal
+            </h3>
+
+
+            <a
+                class="download"
+                href="../pdf/general-1.0-250.pdf"
+                download
+            >
+                ดาวน์โหลด PDF
+            </a>
+
+
+            <iframe
+                src="../pdf/general-1.0-250.pdf"
+                title="สูตรทั่วไป 1.0 kcal/ml 250 kcal"
+            >
+            </iframe>
+
+        </div>
+
+
+
+        <!-- 300 kcal -->
+
+        <div class="pdf-card">
+
+            <h3>
+                พลังงาน 300 kcal
+            </h3>
+
+
+            <a
+                class="download"
+                href="../pdf/general-1.0-300.pdf"
+                download
+            >
+                ดาวน์โหลด PDF
+            </a>
+
+
+            <iframe
+                src="../pdf/general-1.0-300.pdf"
+                title="สูตรทั่วไป 1.0 kcal/ml 300 kcal"
+            >
+            </iframe>
+
+        </div>
+
+
+
+        <!-- 350 kcal -->
+
+        <div class="pdf-card">
+
+            <h3>
+                พลังงาน 350 kcal
+            </h3>
+
+
+            <a
+                class="download"
+                href="../pdf/general-1.0-350.pdf"
+                download
+            >
+                ดาวน์โหลด PDF
+            </a>
+
+
+            <iframe
+                src="../pdf/general-1.0-350.pdf"
+                title="สูตรทั่วไป 1.0 kcal/ml 350 kcal"
+            >
+            </iframe>
+
+        </div>
+
+
+
+        <!-- 400 kcal -->
+
+        <div class="pdf-card">
+
+            <h3>
+                พลังงาน 400 kcal
+            </h3>
+
+
+            <a
+                class="download"
+                href="../pdf/general-1.0-400.pdf"
+                download
+            >
+                ดาวน์โหลด PDF
+            </a>
+
+
+            <iframe
+                src="../pdf/general-1.0-400.pdf"
+                title="สูตรทั่วไป 1.0 kcal/ml 400 kcal"
+            >
+            </iframe>
+
+        </div>
+
+
+
+        <!-- =========================
+             ความเข้มข้น 1.2
+        ========================= -->
+
+        <div class="section-title">
+
+            <h2>
+                ความเข้มข้น 1.2 kcal/ml
+            </h2>
+
+        </div>
+
+
+
+        <!-- 200 kcal -->
+
+        <div class="pdf-card">
+
+            <h3>
+                พลังงาน 200 kcal
+            </h3>
+
+
+            <a
+                class="download"
+                href="../pdf/general-1.2-200.pdf"
+                download
+            >
+                ดาวน์โหลด PDF
+            </a>
+
+
+            <iframe
+                src="../pdf/general-1.2-200.pdf"
+                title="สูตรทั่วไป 1.2 kcal/ml 200 kcal"
+            >
+            </iframe>
+
+        </div>
+
+
+
+        <!-- 250 kcal -->
+
+        <div class="pdf-card">
+
+            <h3>
+                พลังงาน 250 kcal
+            </h3>
+
+
+            <a
+                class="download"
+                href="../pdf/general-1.2-250.pdf"
+                download
+            >
+                ดาวน์โหลด PDF
+            </a>
+
+
+            <iframe
+                src="../pdf/general-1.2-250.pdf"
+                title="สูตรทั่วไป 1.2 kcal/ml 250 kcal"
+            >
+            </iframe>
+
+        </div>
+
+
+
+        <!-- 300 kcal -->
+
+        <div class="pdf-card">
+
+            <h3>
+                พลังงาน 300 kcal
+            </h3>
+
+
+            <a
+                class="download"
+                href="../pdf/general-1.2-300.pdf"
+                download
+            >
+                ดาวน์โหลด PDF
+            </a>
+
+
+            <iframe
+                src="../pdf/general-1.2-300.pdf"
+                title="สูตรทั่วไป 1.2 kcal/ml 300 kcal"
+            >
+            </iframe>
+
+        </div>
+
+
+
+        <!-- 350 kcal -->
+
+        <div class="pdf-card">
+
+            <h3>
+                พลังงาน 350 kcal
+            </h3>
+
+
+            <a
+                class="download"
+                href="../pdf/general-1.2-350.pdf"
+                download
+            >
+                ดาวน์โหลด PDF
+            </a>
+
+
+            <iframe
+                src="../pdf/general-1.2-350.pdf"
+                title="สูตรทั่วไป 1.2 kcal/ml 350 kcal"
+            >
+            </iframe>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="footer">
+
+        Enteral Nutrition • Blenderized Diet &amp; Medical Nutrition
+
+    </footer>
+
+
+</body>
+
+</html>

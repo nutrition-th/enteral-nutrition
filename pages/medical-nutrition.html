@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medical Nutrition</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        /* =========================
+           BODY
+        ========================= */
+
+        body {
+            margin: 0;
+
+            font-family:
+                "Segoe UI",
+                Tahoma,
+                Arial,
+                sans-serif;
+
+            color: #30483a;
+
+            background-color: #f7fbf8;
+
+            background-image:
+                url("../images/enteral-watermark.png");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-attachment: fixed;
+
+            background-repeat: no-repeat;
+        }
+
+
+        /* =========================
+           CONTAINER
+        ========================= */
+
+        .container {
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 30px 25px 60px;
+        }
+
+
+        /* =========================
+           BACK
+        ========================= */
+
+        .back {
+            display: inline-block;
+
+            margin-bottom: 15px;
+
+            color: #5f806b;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 500;
+
+            transition: color 0.2s ease;
+        }
+
+
+        .back:hover {
+            color: #2f6f4e;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            text-align: center;
+
+            padding: 25px 20px 35px;
+        }
+
+
+        .header h1 {
+            margin: 0;
+
+            font-size: 38px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            color: #2f6f4e;
+        }
+
+
+        .header p {
+            margin: 10px auto 0;
+
+            font-size: 15px;
+
+            color: #7d8982;
+        }
+
+
+        /* =========================
+           PRODUCT GRID
+        ========================= */
+
+        .products {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        /* =========================
+           PRODUCT CARD
+        ========================= */
+
+        .product-card {
+            background:
+                rgba(255, 255, 255, 0.95);
+
+            border:
+                1px solid #dcebe2;
+
+            border-radius: 22px;
+
+            padding: 20px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(48, 85, 62, 0.10);
+
+            backdrop-filter: blur(4px);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+
+        .product-card:hover {
+            transform:
+                translateY(-6px);
+
+            box-shadow:
+                0 16px 38px
+                rgba(48, 85, 62, 0.16);
+
+            border-color:
+                #bdd9c7;
+        }
+
+
+        /* =========================
+           IMAGE
+        ========================= */
+
+        .product-image {
+            width: 100%;
+
+            height: 285px;
+
+            background:
+                #edf7f0;
+
+            border-radius: 18px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            overflow: hidden;
+
+            margin-bottom: 20px;
+        }
+
+
+        .product-image img {
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+
+            border-radius: 15px;
+
+            transition:
+                transform 0.25s ease;
+        }
+
+
+        .product-card:hover
+        .product-image img {
+            transform:
+                scale(1.03);
+        }
+
+
+        /* =========================
+           NAME
+        ========================= */
+
+        .product-name {
+            margin: 0 0 5px;
+
+            font-size: 20px;
+
+            font-weight: 600;
+
+            color: #2f6f4e;
+        }
+
+
+        .product-thai {
+            margin: 0 0 18px;
+
+            font-size: 14px;
+
+            color: #7d8982;
+
+            min-height: 24px;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .detail-button {
+            display: block;
+
+            width: 100%;
+
+            padding: 12px 15px;
+
+            border-radius: 10px;
+
+            background:
+                #2f8f83;
+
+            color: white;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease;
+        }
+
+
+        .detail-button:hover {
+            background:
+                #26786e;
+
+            transform:
+                translateY(-1px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+            margin-top: 55px;
+
+            padding-top: 25px;
+
+            border-top:
+                1px solid
+                rgba(226, 235, 229, 0.8);
+
+            text-align: center;
+
+            font-size: 13px;
+
+            color: #9aa59f;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .products {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .container {
+                padding-left: 15px;
+
+                padding-right: 15px;
+            }
+
+
+            .header h1 {
+                font-size: 30px;
+            }
+
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+
+            .product-image {
+                height: 280px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <!-- =========================
+         BACK
+    ========================= -->
+
+    <a
+        href="../index.html"
+        class="back"
+    >
+        ← กลับหน้าหลัก
+    </a>
+
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header class="header">
+
+        <h1>
+            Medical Nutrition
+        </h1>
+
+        <p>
+            ข้อมูลอาหารทางการแพทย์และคุณค่าทางโภชนาการ
+        </p>
+
+    </header>
+
+
+
+    <!-- =========================
+         PRODUCTS
+    ========================= -->
+
+    <section class="products">
+
+
+        <!-- 01 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="../images/blendera-mf.jpg"
+                    alt="Blendera-MF"
+                >
+
+            </div>
+
+
+            <h2 class="product-name">
+                Blendera-MF
+            </h2>
+
+
+            <p class="product-thai">
+                เบลนเดอร่า เอ็มเอฟ
+            </p>
+
+
+            <a
+                href="blendera-mf.html"
+                class="detail-button"
+            >
+                ดูรายละเอียด
+            </a>
+
+        </div>
+
+
+
+        <!-- 02 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="../images/gen-dm.jpg"
+                    alt="GEN-DM"
+                >
+
+            </div>
+
+
+            <h2 class="product-name">
+                GEN-DM
+            </h2>
+
+
+            <p class="product-thai">
+                เจ็น ดีเอ็ม
+            </p>
+
+
+            <a
+                href="gen-dm.html"
+                class="detail-button"
+            >
+                ดูรายละเอียด
+            </a>
+
+        </div>
+
+
+
+        <!-- 03 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="../images/pan-enteral.jpg"
+                    alt="Pan Enteral"
+                >
+
+            </div>
+
+
+            <h2 class="product-name">
+                Pan Enteral
+            </h2>
+
+
+            <p class="product-thai">
+                แพน เอ็นเทอราล
+            </p>
+
+
+            <a
+                href="pan-enteral.html"
+                class="detail-button"
+            >
+                ดูรายละเอียด
+            </a>
+
+        </div>
+
+
+
+        <!-- 04 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="../images/neomune.jpg"
+                    alt="Neomune"
+                >
+
+            </div>
+
+
+            <h2 class="product-name">
+                Neomune
+            </h2>
+
+
+            <p class="product-thai">
+                นีโอมูน
+            </p>
+
+
+            <a
+                href="neomune.html"
+                class="detail-button"
+            >
+                ดูรายละเอียด
+            </a>
+
+        </div>
+
+
+
+        <!-- 05 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="../images/aminoleban-oral.jpg"
+                    alt="AMINOLEBAN ORAL"
+                >
+
+            </div>
+
+
+            <h2 class="product-name">
+                AMINOLEBAN ORAL
+            </h2>
+
+
+            <p class="product-thai">
+                อะมิโนเลแบน ออราล
+            </p>
+
+
+            <a
+                href="aminoleban-oral.html"
+                class="detail-button"
+            >
+                ดูรายละเอียด
+            </a>
+
+        </div>
+
+
+
+        <!-- 06 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="../images/once-sarcopenia.jpg"
+                    alt="ONCE Sarcopenia"
+                >
+
+            </div>
+
+
+            <h2 class="product-name">
+                ONCE Sarcopenia
+            </h2>
+
+
+            <p class="product-thai">
+                วันซ์ ซาร์โคพีเนีย
+            </p>
+
+
+            <a
+                href="once-sarcopenia.html"
+                class="detail-button"
+            >
+                ดูรายละเอียด
+            </a>
+
+        </div>
+
+
+
+        <!-- 07 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="../images/once-renal.jpg"
+                    alt="ONCE Renal"
+                >
+
+            </div>
+
+
+            <h2 class="product-name">
+                ONCE Renal
+            </h2>
+
+
+            <p class="product-thai">
+                วันซ์ รีนอล
+            </p>
+
+
+            <a
+                href="once-renal.html"
+                class="detail-button"
+            >
+                ดูรายละเอียด
+            </a>
+
+        </div>
+
+
+
+        <!-- 08 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="../images/once-dialyze.jpg"
+                    alt="ONCE Dialyze"
+                >
+
+            </div>
+
+
+            <h2 class="product-name">
+                ONCE Dialyze
+            </h2>
+
+
+            <p class="product-thai">
+                วันซ์ ไดอะไลซ์
+            </p>
+
+
+            <a
+                href="once-dialyze.html"
+                class="detail-button"
+            >
+                ดูรายละเอียด
+            </a>
+
+        </div>
+
+
+
+        <!-- 09 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="../images/ensure-gold-advance-pro.jpg"
+                    alt="Ensure Gold Advance Pro"
+                >
+
+            </div>
+
+
+            <h2 class="product-name">
+                Ensure Gold Advance Pro
+            </h2>
+
+
+            <p class="product-thai">
+                เอนชัวร์ โกลด์ แอดวานซ์โปร
+            </p>
+
+
+            <a
+                href="ensure-gold-advance-pro.html"
+                class="detail-button"
+            >
+                ดูรายละเอียด
+            </a>
+
+        </div>
+
+
+
+        <!-- 10 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="../images/glucerna-sr-triple-care.jpg"
+                    alt="Glucerna SR Triple Care"
+                >
+
+            </div>
+
+
+            <h2 class="product-name">
+                Glucerna SR Triple Care
+            </h2>
+
+
+            <p class="product-thai">
+                กลูเซอนา เอสอาร์ ทริปเปิ้ลแคร์
+            </p>
+
+
+            <a
+                href="glucerna-sr-triple-care.html"
+                class="detail-button"
+            >
+                ดูรายละเอียด
+            </a>
+
+        </div>
+
+
+
+        <!-- 11 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="../images/prosure.jpg"
+                    alt="Prosure"
+                >
+
+            </div>
+
+
+            <h2 class="product-name">
+                Prosure
+            </h2>
+
+
+            <p class="product-thai">
+                โปรชัวร์
+            </p>
+
+
+            <a
+                href="prosure.html"
+                class="detail-button"
+            >
+                ดูรายละเอียด
+            </a>
+
+        </div>
+
+
+
+        <!-- 12 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="../images/nepro-lp.jpg"
+                    alt="Nepro LP"
+                >
+
+            </div>
+
+
+            <h2 class="product-name">
+                Nepro LP
+            </h2>
+
+
+            <p class="product-thai">
+                เนบโปร แอลพี
+            </p>
+
+
+            <a
+                href="nepro-lp.html"
+                class="detail-button"
+            >
+                ดูรายละเอียด
+            </a>
+
+        </div>
+
+
+
+        <!-- 13 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="../images/nepro-hp.jpg"
+                    alt="Nepro HP"
+                >
+
+            </div>
+
+
+            <h2 class="product-name">
+                Nepro HP
+            </h2>
+
+
+            <p class="product-thai">
+                เนบโปร เอชพี
+            </p>
+
+
+            <a
+                href="nepro-hp.html"
+                class="detail-button"
+            >
+                ดูรายละเอียด
+            </a>
+
+        </div>
+
+
+
+        <!-- 14 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="../images/fresubin-whey-protein-isolate.jpg"
+                    alt="Fresubin Whey Protein Isolate"
+                >
+
+            </div>
+
+
+            <h2 class="product-name">
+                Fresubin Whey Protein Isolate
+            </h2>
+
+
+            <p class="product-thai">
+                เฟรซูบิน เวย์โปรตีน ไอโซเลต
+            </p>
+
+
+            <a
+                href="fresubin-whey-protein-isolate.html"
+                class="detail-button"
+            >
+                ดูรายละเอียด
+            </a>
+
+        </div>
+
+
+
+        <!-- 15 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="../images/peptamen-high-protein.jpg"
+                    alt="Peptamen High Protein"
+                >
+
+            </div>
+
+
+            <h2 class="product-name">
+                Peptamen High Protein
+            </h2>
+
+
+            <p class="product-thai">
+                เป็ปทาเมน สูตรโปรตีนสูง
+            </p>
+
+
+            <a
+                href="peptamen-high-protein.html"
+                class="detail-button"
+            >
+                ดูรายละเอียด
+            </a>
+
+        </div>
+
+
+
+        <!-- 16 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="../images/oral-impact.jpg"
+                    alt="Oral Impact"
+                >
+
+            </div>
+
+
+            <h2 class="product-name">
+                Oral Impact
+            </h2>
+
+
+            <p class="product-thai">
+                ออรัล อิมแพค
+            </p>
+
+
+            <a
+                href="oral-impact.html"
+                class="detail-button"
+            >
+                ดูรายละเอียด
+            </a>
+
+        </div>
+
+
+
+        <!-- 17 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="../images/nutren-junior.jpg"
+                    alt="NUTREN Junior"
+                >
+
+            </div>
+
+
+            <h2 class="product-name">
+                NUTREN Junior
+            </h2>
+
+
+            <p class="product-thai">
+                นิวเทรน จูเนียร์
+            </p>
+
+
+            <a
+                href="nutren-junior.html"
+                class="detail-button"
+            >
+                ดูรายละเอียด
+            </a>
+
+        </div>
+
+
+
+        <!-- 18 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="../images/ma-beedee.jpg"
+                    alt="Ma-Beedee"
+                >
+
+            </div>
+
+
+            <h2 class="product-name">
+                Ma-Beedee
+            </h2>
+
+
+            <p class="product-thai">
+                มา-บีดี
+            </p>
+
+
+            <a
+                href="ma-beedee.html"
+                class="detail-button"
+            >
+                ดูรายละเอียด
+            </a>
+
+        </div>
+
+
+
+        <!-- 19 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="../images/d-care.jpg"
+                    alt="D-Care"
+                >
+
+            </div>
+
+
+            <h2 class="product-name">
+                D-Care
+            </h2>
+
+
+            <p class="product-thai">
+                ดี-แคร์
+            </p>
+
+
+            <a
+                href="d-care.html"
+                class="detail-button"
+            >
+                ดูรายละเอียด
+            </a>
+
+        </div>
+
+
+
+        <!-- 20 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="../images/mares-p10.jpg"
+                    alt="Mares P10"
+                >
+
+            </div>
+
+
+            <h2 class="product-name">
+                Mares P10
+            </h2>
+
+
+            <p class="product-thai">
+                มาเลส P10
+            </p>
+
+
+            <a
+                href="mares-p10.html"
+                class="detail-button"
+            >
+                ดูรายละเอียด
+            </a>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="footer">
+
+        Enteral Nutrition • Blenderized Diet &amp; Medical Nutrition
+
+    </footer>
+
+
+</div>
+
+
+</body>
+
+</html>

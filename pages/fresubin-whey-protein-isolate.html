@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fresubin Whey Protein Isolate</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, "Tahoma", sans-serif;
+            background: #f3f8f7;
+            color: #333;
+        }
+
+        header {
+            background: white;
+            padding: 18px;
+            text-align: center;
+            color: #258579;
+            font-weight: bold;
+            border-bottom: 1px solid #e5eeee;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #27877d;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .product-box {
+            background: white;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 280px;
+            background: #edf5f3;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7caaa5;
+            margin-bottom: 25px;
+        }.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+        h1 {
+            color: #258579;
+            margin-bottom: 5px;
+        }
+
+        .thai-name {
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .calculator {
+            margin-top: 30px;
+            padding: 25px;
+            background: #f5faf9;
+            border-radius: 15px;
+        }
+
+        .calculator h2 {
+            color: #258579;
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccdeda;
+            border-radius: 8px;
+            font-size: 16px;
+            background: white;
+        }
+
+        .calculate-button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            background: #2d897d;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        .calculate-button:hover {
+            background: #24766d;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            border-left: 5px solid #2d897d;
+        }
+
+        .result p {
+            margin: 8px 0;
+            font-size: 17px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    ผลิตภัณฑ์อาหารทางการแพทย์
+</header>
+
+<div class="container">
+
+    <a href="medical-nutrition.html" class="back-button">
+        ← กลับหน้าผลิตภัณฑ์
+    </a>
+
+    <div class="product-box">
+
+        <div class="product-image">
+    <img src="../images/fresubin-whey-protein-isolate.jpg" alt="Fresubin Whey Protein Isolate">
+</div>
+
+        <h1>Fresubin Whey Protein Isolate</h1>
+
+        <div class="thai-name">
+            เฟรซูบิน เวย์โปรตีน ไอโซเลต
+        </div>
+
+        <h3>ข้อมูลผลิตภัณฑ์</h3>
+
+        <p>
+            ผลิตภัณฑ์อาหารทางการแพทย์ชนิดผง
+        </p>
+
+        <div class="calculator">
+
+            <h2>คำนวณปริมาณที่ได้รับ</h2>
+
+            <label for="concentration">
+                เลือกความเข้มข้น
+            </label>
+
+            <select id="concentration">
+                <option value="1">1.0 kcal/ml</option>
+                <option value="1.2">1.2 kcal/ml</option>
+                <option value="1.5">1.5 kcal/ml</option>
+                <option value="2">2.0 kcal/ml</option>
+            </select>
+
+            <label for="volume">
+                เลือกปริมาตรต่อครั้ง
+            </label>
+
+            <select id="volume">
+                <option value="50">50 ml</option>
+                <option value="100">100 ml</option>
+                <option value="150">150 ml</option>
+                <option value="200">200 ml</option>
+                <option value="250">250 ml</option>
+                <option value="300">300 ml</option>
+                <option value="350">350 ml</option>
+                <option value="400">400 ml</option>
+                <option value="450">450 ml</option>
+                <option value="500">500 ml</option>
+            </select>
+
+            <button class="calculate-button" onclick="calculate()">
+                คำนวณ
+            </button>
+
+            <div class="result" id="result">
+
+                <p><strong>พลังงาน:</strong> 0 kcal</p>
+
+                <p><strong>โปรตีน:</strong> 0.00 กรัม</p>
+
+                <p>
+                    <strong>
+                        จำนวนช้อนตวงที่มากับผลิตภัณฑ์:
+                    </strong>
+                    0 ช้อน
+                </p>
+
+                <p>
+                    <strong>น้ำหนักผง:</strong>
+                    0 กรัม
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function calculate() {
+
+    const concentration =
+        parseFloat(document.getElementById("concentration").value);
+
+    const volume =
+        parseFloat(document.getElementById("volume").value);
+
+    // คำนวณพลังงาน
+    const energy = concentration * volume;
+
+    // ข้อมูลอ้างอิง Fresubin Whey Protein Isolate
+    // 22 kcal = โปรตีน 5.2 g
+    // 22 kcal = ผง 6 g
+    // 22 kcal = 1 ช้อน
+
+    const protein =
+        energy * 5.2 / 22;
+
+    const powder =
+        energy * 6 / 22;
+
+    const scoops =
+        energy * 1 / 22;
+
+    document.getElementById("result").innerHTML = `
+
+        <p>
+            <strong>พลังงาน:</strong>
+            ${energy.toFixed(2)} kcal
+        </p>
+
+        <p>
+            <strong>โปรตีน:</strong>
+            ${protein.toFixed(2)} กรัม
+        </p>
+
+        <p>
+            <strong>
+                จำนวนช้อนตวงที่มากับผลิตภัณฑ์:
+            </strong>
+            ${scoops.toFixed(2)} ช้อน
+        </p>
+
+        <p>
+            <strong>น้ำหนักผง:</strong>
+            ${powder.toFixed(2)} กรัม
+        </p>
+
+    `;
+}
+
+</script>
+
+</body>
+</html>

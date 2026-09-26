@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ENTERAL NUTRITION</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            margin: 0;
+
+            font-family:
+                "Segoe UI",
+                Tahoma,
+                Arial,
+                sans-serif;
+
+            color: #30483a;
+
+            background-color: #f7fbf8;
+
+            background-image:
+                url("images/enteral-watermark.png");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-attachment: fixed;
+
+            background-repeat: no-repeat;
+        }
+
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .container {
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+            padding: 30px 25px 50px;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            text-align: center;
+
+            padding: 55px 20px 45px;
+        }
+
+
+        .header h1 {
+            margin: 0;
+
+            font-size: 42px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            color: #2f6f4e;
+        }
+
+
+        .header > p:first-of-type {
+            margin: 10px 0 28px;
+
+            font-size: 18px;
+
+            color: #718078;
+
+            font-style: italic;
+        }
+
+
+        .header h2 {
+            margin: 0;
+
+            font-size: 26px;
+
+            font-weight: 600;
+
+            color: #3f5f4b;
+        }
+
+
+        .subtitle {
+            margin: 12px auto 0;
+
+            max-width: 750px;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+            color: #7d8982;
+        }
+
+
+        /* =========================
+           MENU CARDS
+        ========================= */
+
+        .cards {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+
+            margin-top: 15px;
+        }
+
+
+        .card {
+            display: block;
+
+            text-decoration: none;
+
+            color: inherit;
+
+            background:
+                rgba(255, 255, 255, 0.94);
+
+            border:
+                1px solid #dcebe2;
+
+            border-radius: 22px;
+
+            padding: 35px 25px;
+
+            min-height: 245px;
+
+            text-align: center;
+
+            box-shadow:
+                0 10px 30px
+                rgba(48, 85, 62, 0.10);
+
+            backdrop-filter: blur(4px);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+
+        .card:hover {
+            transform:
+                translateY(-7px);
+
+            box-shadow:
+                0 16px 38px
+                rgba(48, 85, 62, 0.16);
+
+            border-color:
+                #bcd8c7;
+        }
+
+
+        /* =========================
+           CARD ICON
+        ========================= */
+
+        .icon {
+            width: 70px;
+
+            height: 70px;
+
+            margin: 0 auto 20px;
+
+            border-radius: 20px;
+
+            background: #edf7f0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 0;
+        }
+
+
+        /* ไม่มีอิโมจิ
+           ใช้แถบตกแต่งแทน */
+
+        .icon::after {
+            content: "";
+
+            width: 28px;
+
+            height: 28px;
+
+            border-radius: 50%;
+
+            border:
+                3px solid #76a98b;
+
+            opacity: 0.75;
+        }
+
+
+        /* =========================
+           CARD TEXT
+        ========================= */
+
+        .card h3 {
+            margin: 0 0 12px;
+
+            font-size: 21px;
+
+            font-weight: 600;
+
+            color: #2f6f4e;
+        }
+
+
+        .card p {
+            margin: 0;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            color: #78857e;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+            margin-top: 60px;
+
+            padding-top: 25px;
+
+            text-align: center;
+
+            border-top:
+                1px solid
+                rgba(226, 235, 229, 0.8);
+
+            font-size: 13px;
+
+            color: #8f9d95;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .cards {
+                grid-template-columns: 1fr;
+
+                max-width: 500px;
+
+                margin-left: auto;
+
+                margin-right: auto;
+            }
+
+
+            .header {
+                padding-top: 40px;
+            }
+
+
+            .header h1 {
+                font-size: 34px;
+            }
+
+
+            .header h2 {
+                font-size: 22px;
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 500px) {
+
+            .container {
+                padding-left: 15px;
+
+                padding-right: 15px;
+            }
+
+
+            .header h1 {
+                font-size: 29px;
+
+                letter-spacing: 1px;
+            }
+
+
+            .header > p:first-of-type {
+                font-size: 15px;
+            }
+
+
+            .header h2 {
+                font-size: 20px;
+            }
+
+
+            .subtitle {
+                font-size: 13px;
+            }
+
+
+            .card {
+                min-height: 210px;
+
+                padding: 30px 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header class="header">
+
+
+        <h1>
+            ENTERAL NUTRITION
+        </h1>
+
+
+        <p>
+            Blenderized Diet &amp; Medical Nutrition
+        </p>
+
+
+        <h2>
+            ระบบข้อมูลโภชนาการสำหรับการให้อาหารทางสาย
+        </h2>
+
+
+        <p class="subtitle">
+
+            รวบรวมสูตรอาหารปั่นผสม
+            อาหารทางการแพทย์
+            และเครื่องมือคำนวณทางโภชนาการ
+
+        </p>
+
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN MENU
+    ========================= -->
+
+    <section class="cards">
+
+
+        <!-- Nutrition Calculator -->
+
+        <a
+            href="pages/nutrition-calculator.html"
+            class="card"
+        >
+
+            <div class="icon"></div>
+
+
+            <h3>
+                Nutrition Calculator
+            </h3>
+
+
+            <p>
+
+                เครื่องมือคำนวณพลังงาน
+                โปรตีน และความต้องการทางโภชนาการ
+
+            </p>
+
+        </a>
+
+
+
+        <!-- Blenderized Diet -->
+
+        <a
+            href="pages/blenderized-diet.html"
+            class="card"
+        >
+
+            <div class="icon"></div>
+
+
+            <h3>
+                Blenderized Diet
+            </h3>
+
+
+            <p>
+
+                ฐานข้อมูลสูตรอาหารปั่นผสม
+                วัตถุดิบ ปริมาณ และข้อมูลสารอาหาร
+
+            </p>
+
+        </a>
+
+
+
+        <!-- Medical Nutrition -->
+
+        <a
+            href="pages/medical-nutrition.html"
+            class="card"
+        >
+
+            <div class="icon"></div>
+
+
+            <h3>
+                Medical Nutrition
+            </h3>
+
+
+            <p>
+
+                ข้อมูลอาหารทางการแพทย์
+                และคุณค่าทางโภชนาการของแต่ละสูตร
+
+            </p>
+
+        </a>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="footer">
+
+        ระบบข้อมูลโภชนาการสำหรับการให้อาหารทางสาย
+
+    </footer>
+
+
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Peptamen | Enteral Nutrition</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            background: #f3f8f7;
+            color: #333;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 22px 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .header-inner {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #2d8174;
+            font-size: 15px;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+        }
+
+        .product-top {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .product-image {
+            width: 220px;
+            height: 220px;
+            border-radius: 15px;
+            background: #eef5f3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8a9c98;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .product-info {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .product-info h1 {
+            margin-top: 0;
+            color: #277c70;
+            font-size: 32px;
+        }
+
+        .product-info p {
+            line-height: 1.8;
+            margin: 8px 0;
+        }
+
+        h2 {
+            color: #277c70;
+            margin-top: 0;
+        }
+
+        .calculator label {
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        select {
+            width: 100%;
+            padding: 13px 15px;
+            border: 1px solid #ccd7d5;
+            border-radius: 10px;
+            font-size: 16px;
+            background: #fff;
+        }
+
+        button {
+            margin-top: 22px;
+            padding: 13px 28px;
+            border: none;
+            border-radius: 9px;
+            background: #2d8174;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #246d62;
+        }
+
+        .result {
+            margin-top: 25px;
+            background: #eef6f4;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .result-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .energy-number {
+            font-size: 34px;
+            font-weight: 700;
+            color: #277c70;
+            margin: 5px 0;
+        }
+
+        .unit {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .product-result {
+            border-top: 1px solid #d5e3e0;
+            padding-top: 15px;
+            text-align: left;
+        }
+
+        .product-result p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .product-result span {
+            font-weight: 700;
+            color: #277c70;
+        }
+
+        footer {
+            text-align: center;
+            color: #71807d;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 20px;
+            }
+
+            .product-image {
+                width: 100%;
+                height: 200px;
+            }
+
+            .product-info h1 {
+                font-size: 27px;
+            }
+        }
+        .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 15px;
+}
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-inner">
+        <a href="medical-nutrition.html" class="back-link">
+            ← กลับไป Medical Nutrition
+        </a>
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- ข้อมูลผลิตภัณฑ์ -->
+    <div class="card">
+
+        <div class="product-top">
+
+            <<div class="product-image">
+    <img src="../images/peptamen.jpg" alt="Peptamen">
+</div>
+
+            <div class="product-info">
+
+                <h1>Peptamen</h1>
+
+                <p>
+                    <strong>ประเภท:</strong>
+                    อาหารทางการแพทย์สูตรเปปไทด์
+                </p>
+
+                <p>
+                    <strong>โปรตีน:</strong>
+                    เวย์โปรตีนในรูปเปปไทด์
+                </p>
+
+                <p>
+                    <strong>จุดเด่น:</strong>
+                    มี MCT และออกแบบสำหรับผู้ที่มีปัญหาด้านการย่อยหรือการดูดซึม
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- เครื่องคำนวณ -->
+    <div class="card calculator">
+
+        <h2>คำนวณปริมาณที่ได้รับ</h2>
+
+        <label for="concentration">
+            ความเข้มข้น
+        </label>
+
+        <select id="concentration">
+
+            <option value="1.0">
+                1.0 kcal/ml
+            </option>
+
+            <option value="1.2">
+                1.2 kcal/ml
+            </option>
+
+            <option value="1.5">
+                1.5 kcal/ml
+            </option>
+
+            <option value="2.0">
+                2.0 kcal/ml
+            </option>
+
+        </select>
+
+
+        <label for="volume">
+            ปริมาณต่อมื้อ
+        </label>
+
+        <select id="volume">
+
+            <option value="50">50 ml</option>
+            <option value="100">100 ml</option>
+            <option value="150">150 ml</option>
+            <option value="200">200 ml</option>
+            <option value="250">250 ml</option>
+            <option value="300">300 ml</option>
+            <option value="350">350 ml</option>
+            <option value="400">400 ml</option>
+            <option value="450">450 ml</option>
+            <option value="500">500 ml</option>
+
+        </select>
+
+
+        <button onclick="calculateFormula()">
+            คำนวณ
+        </button>
+
+
+        <!-- ผลลัพธ์ -->
+        <div class="result">
+
+            <div class="result-title">
+                พลังงาน
+            </div>
+
+            <div class="energy-number" id="resultEnergy">
+                0
+            </div>
+
+            <div class="unit">
+                kcal
+            </div>
+
+
+            <div class="product-result">
+
+                <p>
+                    <strong>
+                        จำนวนช้อนตวงที่มากับผลิตภัณฑ์:
+                    </strong>
+
+                    <span id="resultScoops">
+                        0
+                    </span>
+
+                    ช้อน
+                </p>
+
+
+                <p>
+                    <strong>
+                        น้ำหนักผง:
+                    </strong>
+
+                    <span id="resultPowder">
+                        0
+                    </span>
+
+                    กรัม
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+    Enteral Nutrition • Medical Nutrition
+</footer>
+
+
+<script>
+
+function calculateFormula() {
+
+    // รับค่าความเข้มข้น
+    const concentration =
+        parseFloat(
+            document.getElementById("concentration").value
+        );
+
+
+    // รับค่าปริมาณต่อมื้อ
+    const volume =
+        parseFloat(
+            document.getElementById("volume").value
+        );
+
+
+    // คำนวณพลังงาน
+    const energy =
+        concentration * volume;
+
+
+    /*
+        เกณฑ์ Peptamen
+
+        250 kcal
+        = 6 ช้อน
+        = 55 กรัม
+
+        ใช้บัญญัติไตรยางค์
+    */
+
+
+    // จำนวนช้อน
+    const scoops =
+        (energy * 6) / 250;
+
+
+    // น้ำหนักผง
+    const powder =
+        (energy * 55) / 250;
+
+
+    // แสดงพลังงาน
+    document.getElementById("resultEnergy").textContent =
+        energy;
+
+
+    // แสดงจำนวนช้อน
+    document.getElementById("resultScoops").textContent =
+        formatNumber(scoops);
+
+
+    // แสดงน้ำหนักผง
+    document.getElementById("resultPowder").textContent =
+        formatNumber(powder);
+
+}
+
+
+/*
+    จัดรูปแบบตัวเลข
+    ถ้าเป็นจำนวนเต็มให้แสดงจำนวนเต็ม
+    ถ้ามีทศนิยมให้แสดง 1 ตำแหน่ง
+*/
+
+function formatNumber(number) {
+
+    if (Number.isInteger(number)) {
+        return number;
+    }
+
+    return number.toFixed(1);
+}
+
+</script>
+
+</body>
+</html>
