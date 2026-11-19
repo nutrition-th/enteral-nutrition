@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="th">
 
@@ -9,294 +10,212 @@
 
     <title>Blenderized Diet</title>
 
-
     <style>
 
         * {
             box-sizing: border-box;
         }
 
-
-        /* =========================
-           BODY
-        ========================= */
+        /* BODY */
 
         body {
             margin: 0;
-
-            font-family:
-                "Segoe UI",
-                Tahoma,
-                Arial,
-                sans-serif;
-
+            font-family: "Segoe UI", Tahoma, Arial, sans-serif;
             color: #30483a;
-
             background-color: #f7fbf8;
-
-            background-image:
-                url("../images/enteral-watermark.png");
-
+            background-image: url("../images/enteral-watermark.png");
             background-size: cover;
-
             background-position: center;
-
             background-attachment: fixed;
-
             background-repeat: no-repeat;
-
             line-height: 1.7;
         }
 
-
-        /* =========================
-           CONTAINER
-        ========================= */
+        /* CONTAINER */
 
         .container {
             max-width: 1100px;
-
             margin: 0 auto;
-
             padding: 30px 25px 50px;
         }
 
-
-        /* =========================
-           BACK BUTTON
-        ========================= */
+        /* BACK BUTTON */
 
         .back {
             display: inline-block;
-
             margin-bottom: 10px;
-
             color: #5f806b;
-
             text-decoration: none;
-
             font-size: 14px;
-
             font-weight: 500;
-
             transition: color 0.2s ease;
         }
-
 
         .back:hover {
             color: #2f6f4e;
         }
 
-
-        /* =========================
-           HEADER
-        ========================= */
+        /* HEADER */
 
         .header {
             text-align: center;
-
             padding: 35px 20px 40px;
         }
 
-
         .header h1 {
             margin: 0;
-
             font-size: 38px;
-
             font-weight: 700;
-
             letter-spacing: 1px;
-
             color: #2f6f4e;
         }
-
 
         .header p {
             margin: 10px auto 0;
-
             max-width: 700px;
-
             font-size: 15px;
-
             line-height: 1.8;
-
             color: #7d8982;
         }
 
-
-        /* =========================
-           RECIPE GRID
-        ========================= */
+        /* RECIPE GRID */
 
         .recipes {
             display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
-
             margin-top: 10px;
         }
 
-
         .recipe-link {
             display: block;
-
             text-decoration: none;
-
             color: inherit;
         }
 
-
-        /* =========================
-           RECIPE CARD
-        ========================= */
+        /* RECIPE CARD */
 
         .recipe {
-            background:
-                rgba(255, 255, 255, 0.95);
-
-            border:
-                1px solid #dcebe2;
-
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #dcebe2;
             border-radius: 22px;
-
             padding: 40px 25px;
-
             min-height: 245px;
-
             display: flex;
-
             flex-direction: column;
-
             justify-content: center;
-
             align-items: center;
-
             text-align: center;
-
-            box-shadow:
-                0 10px 30px
-                rgba(48, 85, 62, 0.10);
-
+            box-shadow: 0 10px 30px rgba(48, 85, 62, 0.10);
             backdrop-filter: blur(4px);
-
-            transition:
-                transform 0.25s ease,
-                box-shadow 0.25s ease,
-                border-color 0.25s ease;
+            transition: transform 0.25s ease,
+                        box-shadow 0.25s ease,
+                        border-color 0.25s ease;
         }
-
 
         .recipe:hover {
-            transform:
-                translateY(-7px);
-
-            box-shadow:
-                0 16px 38px
-                rgba(48, 85, 62, 0.16);
-
-            border-color:
-                #bdd9c7;
+            transform: translateY(-7px);
+            box-shadow: 0 16px 38px rgba(48, 85, 62, 0.16);
+            border-color: #bdd9c7;
         }
 
-
-        /* =========================
-           NUMBER
-        ========================= */
+        /* NUMBER */
 
         .recipe-number {
             width: 62px;
-
             height: 62px;
-
             border-radius: 19px;
-
-            background:
-                #edf7f0;
-
+            background: #edf7f0;
             display: flex;
-
             align-items: center;
-
             justify-content: center;
-
             margin-bottom: 23px;
-
             color: #2f6f4e;
-
             font-size: 19px;
-
             font-weight: 600;
-
-            border:
-                1px solid #dcebe2;
+            border: 1px solid #dcebe2;
         }
 
-
-        /* =========================
-           CARD TITLE
-        ========================= */
+        /* CARD TITLE */
 
         .recipe h3 {
             margin: 0;
-
             max-width: 280px;
-
             font-size: 20px;
-
             font-weight: 600;
-
             line-height: 1.6;
-
             color: #2f6f4e;
         }
 
+        /* VIDEO SECTION */
 
-        /* =========================
-           FOOTER
-        ========================= */
+        .video-section {
+            margin-top: 60px;
+            padding: 35px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #dcebe2;
+            border-radius: 22px;
+            box-shadow: 0 10px 30px rgba(48, 85, 62, 0.10);
+            text-align: center;
+        }
+
+        .video-section h2 {
+            margin: 0 0 10px;
+            color: #2f6f4e;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        .video-section p {
+            margin: 0 0 25px;
+            color: #7d8982;
+            font-size: 15px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border-radius: 14px;
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* FOOTER */
 
         .footer {
             margin-top: 60px;
-
             padding-top: 25px;
-
-            border-top:
-                1px solid
-                rgba(226, 235, 229, 0.8);
-
+            border-top: 1px solid rgba(226, 235, 229, 0.8);
             text-align: center;
-
             font-size: 13px;
-
             color: #9aa59f;
         }
 
-
-        /* =========================
-           TABLET
-        ========================= */
+        /* TABLET */
 
         @media (max-width: 850px) {
 
             .recipes {
                 grid-template-columns: 1fr;
-
                 max-width: 500px;
-
                 margin-left: auto;
-
                 margin-right: auto;
             }
-
 
             .header {
                 padding-top: 30px;
             }
-
 
             .header h1 {
                 font-size: 32px;
@@ -304,40 +223,38 @@
 
         }
 
-
-        /* =========================
-           MOBILE
-        ========================= */
+        /* MOBILE */
 
         @media (max-width: 500px) {
 
             .container {
                 padding-left: 15px;
-
                 padding-right: 15px;
             }
-
 
             .header h1 {
                 font-size: 28px;
             }
 
-
             .header p {
                 font-size: 14px;
             }
 
-
             .recipe {
                 min-height: 215px;
-
-                padding:
-                    35px 20px;
+                padding: 35px 20px;
             }
-
 
             .recipe h3 {
                 font-size: 18px;
+            }
+
+            .video-section {
+                padding: 25px 15px;
+            }
+
+            .video-section h2 {
+                font-size: 21px;
             }
 
         }
@@ -346,36 +263,21 @@
 
 </head>
 
-
 <body>
-
 
 <div class="container">
 
+    <!-- BACK -->
 
-    <!-- =========================
-         BACK
-    ========================= -->
-
-    <a
-        href="../index.html"
-        class="back"
-    >
+    <a href="../index.html" class="back">
         ← กลับหน้าหลัก
     </a>
 
-
-
-    <!-- =========================
-         HEADER
-    ========================= -->
+    <!-- HEADER -->
 
     <header class="header">
 
-        <h1>
-            Blenderized Diet
-        </h1>
-
+        <h1>Blenderized Diet</h1>
 
         <p>
             สูตรอาหารปั่นผสมสำหรับการให้อาหารทางสาย
@@ -383,105 +285,94 @@
 
     </header>
 
-
-
-    <!-- =========================
-         RECIPE MENU
-    ========================= -->
+    <!-- RECIPE MENU -->
 
     <section class="recipes">
 
+        <!-- สูตรทั่วไป -->
 
-        <!-- =========================
-             สูตรทั่วไป
-        ========================= -->
-
-        <a
-            href="blenderized-general-1.0.html"
-            class="recipe-link"
-        >
+        <a href="blenderized-general-1.0.html" class="recipe-link">
 
             <div class="recipe">
-
 
                 <div class="recipe-number">
                     01
                 </div>
 
-
                 <h3>
                     สูตรอาหารปั่นผสมทั่วไป
                 </h3>
-
 
             </div>
 
         </a>
 
+        <!-- สูตรเบาหวาน -->
 
-
-        <!-- =========================
-             สูตรเบาหวาน
-        ========================= -->
-
-        <a
-            href="blenderized-diabetes.html"
-            class="recipe-link"
-        >
+        <a href="blenderized-diabetes.html" class="recipe-link">
 
             <div class="recipe">
-
 
                 <div class="recipe-number">
                     02
                 </div>
 
-
                 <h3>
                     สูตรอาหารปั่นผสมสำหรับผู้ป่วยเบาหวาน
                 </h3>
-
 
             </div>
 
         </a>
 
+        <!-- สูตรโรคไต -->
 
-
-        <!-- =========================
-             สูตรโรคไต
-        ========================= -->
-
-        <a
-            href="blenderized-ckd.html"
-            class="recipe-link"
-        >
+        <a href="blenderized-ckd.html" class="recipe-link">
 
             <div class="recipe">
-
 
                 <div class="recipe-number">
                     03
                 </div>
 
-
                 <h3>
                     สูตรอาหารปั่นผสมสำหรับผู้ป่วยโรคไตเรื้อรัง
                 </h3>
-
 
             </div>
 
         </a>
 
+    </section>
+
+    <!-- VIDEO SECTION -->
+
+    <section class="video-section">
+
+        <h2>
+            วิดีโอสาธิตการเตรียมอาหารปั่นผสม
+        </h2>
+
+        <p>
+            สำหรับการให้อาหารทางสายให้อาหาร
+        </p>
+
+        <div class="video-wrapper">
+
+            <iframe
+                src="https://www.youtube-nocookie.com/embed/WbsqVfT99UE?rel=0"
+                title="วิดีโอสาธิตการเตรียมอาหารปั่นผสม"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+        </div>
 
     </section>
 
-
-
-    <!-- =========================
-         FOOTER
-    ========================= -->
+    <!-- FOOTER -->
 
     <footer class="footer">
 
@@ -489,9 +380,7 @@
 
     </footer>
 
-
 </div>
-
 
 </body>
 
